@@ -4,7 +4,7 @@ public class ContenedorRect {
     private Rectangulo[] listaRectangulos;
     private double[] listaDistancias;
     private double[] listaAreas;
-    private int contador;
+    private int numRec;
 
     // Constructor
     public ContenedorRect(int n) {
@@ -12,23 +12,23 @@ public class ContenedorRect {
         this.listaRectangulos = new Rectangulo[n];
         this.listaDistancias = new double[n];
         this.listaAreas = new double[n];
-        this.contador = 0;
+        this.numRec = 0;
     }
 
-    // Agregar Rectángulo
+    // Agregar Rectángulo (add Rectangulo)
     public void agregarRectangulo(Rectangulo r) {
-        if (contador < n) {
-            listaRectangulos[contador] = r;
-            listaAreas[contador] = r.area(); // Suponiendo que Rectangulo tiene un método area()
+        if (numRec < n) {
+            listaRectangulos[numRec] = r;
+            listaAreas[numRec] = r.area();
 
             // Calcular la distancia con el rectángulo anterior si hay al menos uno almacenado
-            if (contador > 0) {
-                listaDistancias[contador] = calcularDistancia(listaRectangulos[contador - 1], r);
+            if (numRec > 0) {
+                listaDistancias[numRec] = calcularDistancia(listaRectangulos[numRec - 1], r);
             } else {
-                listaDistancias[contador] = 0; // Primer rectángulo, no hay distancia previa
+                listaDistancias[numRec] = 0; // Primer rectángulo, no hay distancia previa
             }
 
-            contador++;
+            numRec++;
         } else {
             System.out.println("No se pueden agregar más rectángulos.");
         }
@@ -58,6 +58,6 @@ public class ContenedorRect {
 
     // Mostrar cantidad de elementos
     public int getCantidadRectangulos() {
-        return contador;
+        return numRec;
     }
 }
