@@ -15,7 +15,7 @@ public class ContenedorRect {
         this.numRec = 0;
     }
 
-    // Agregar Rectángulo (add Rectangulo)
+    // Agregar Rectángulo (addRectangulo)
     public void agregarRectangulo(Rectangulo r) {
         if (numRec < n) {
             listaRectangulos[numRec] = r;
@@ -36,28 +36,23 @@ public class ContenedorRect {
 
     // Calcular distancia entre los centros de dos rectángulos
     private double calcularDistancia(Rectangulo r1, Rectangulo r2) {
-        Coordenada c1 = r1.getCentro(); // Suponiendo que Rectangulo tiene getCentro()
+        Coordenada c1 = r1.getCentro();
         Coordenada c2 = r2.getCentro();
         return Math.sqrt(Math.pow(c2.getX() - c1.getX(), 2) + Math.pow(c2.getY() - c1.getY(), 2));
     }
 
-    // Obtener lista de rectángulos
-    public Rectangulo[] getRectangulos() {
-        return listaRectangulos;
-    }
+    //Mostrar los Rectangulos
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Rectángulo  Coordenadas  Distancia  Área\n");
 
-    // Obtener lista de áreas
-    public double[] getListaAreas() {
-        return listaAreas;
-    }
+        for (int i = 0; i < numRec; i++) {
+            sb.append((i + 1) + "  " +
+                    "(" + listaRectangulos[i].getEsquina1() + ", " + listaRectangulos[i].getEsquina2() + ")  " +
+                    listaDistancias[i] + "  " + listaAreas[i] + "\n");
+        }
 
-    // Obtener lista de distancias
-    public double[] getListaDistancias() {
-        return listaDistancias;
-    }
-
-    // Mostrar cantidad de elementos
-    public int getCantidadRectangulos() {
-        return numRec;
+        return sb.toString();
     }
 }
