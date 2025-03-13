@@ -14,6 +14,10 @@ public class ContenedorRect {
         this.listaAreas = new double[n];
         this.numRec = 0;
     }
+    //Obtener rectangulos
+    public Rectangulo[] getRectangulos() {
+        return listaRectangulos;
+    }
 
     // Agregar Rectángulo (addRectangulo)
     public void agregarRectangulo(Rectangulo r) {
