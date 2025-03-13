@@ -4,7 +4,7 @@ La clase coordenada cumple con todos los requisitos dados en clase:
 - Tres constructores
 - Getters y Setters
 - Metodo estático y de instancia para hallar la distancia
--toString para convertir el objeto en cadena
+-toString para crear una cadena
 */
 
 import java.util.*;
@@ -28,25 +28,16 @@ public class Coordenada {
     }
 
     //Getters y Setters
-    void setX(double x) {
-        this.x = x;
-    }
-    void setY(double y) {
-        this.y = y;
-    }
-    double getX() {
-        return x;
-    }
-    double getY() {
-        return y;
-    }
+    public void setX(double x) { this.x = x; }
+    public void setY(double y) { this.y = y; }
+    public double getX() { return x; }
+    public double getY() { return y; }
 
     //Metodos
     public double distancia(Coordenada c) {
         return Math.sqrt(Math.pow(c.x - this.x, 2) + Math.pow(c.y - this.y, 2));
     }
-
-    static double distancia(Coordenada c1, Coordenada c2) {
+    public static double distancia(Coordenada c1, Coordenada c2) {
         return Math.sqrt(Math.pow(c2.x - c1.x, 2) + Math.pow(c2.y - c1.y, 2));
     }
 
