@@ -28,6 +28,13 @@ public class Rectangulo {
     public Coordenada getEsquina2() {
         return esquina2;
     }
+    //Metodo Para hallar el centro
+    public Coordenada getCentro() {
+        double centroX = (esquina1.getX() + esquina2.getX()) / 2;
+        double centroY = (esquina1.getY() + esquina2.getY()) / 2;
+        return new Coordenada(centroX, centroY);
+    }
+
     public String toString() {
         return "Coordenadas de esquinas: " + esquina1 + ", " + esquina2;
     }
