@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,6 +26,38 @@ public class Main {
         System.out.println("Rectángulo A: " + A);
         System.out.println("Rectángulo B: " + B);
 
+
+        int opcion;
+        System.out.println("\nIngrese una opcion:");
+        System.out.println("1. Verificar si uno está sobre otro");
+        System.out.println("2. Verificar si están lado a lado");
+        System.out.println("3. Verificar si están separados");
+        System.out.println("4. Realizar todas las comprobaciones");
+        System.out.println("5. Salir");
+        System.out.print("Elige una opción: ");
+        opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                System.out.println("¿Uno está sobre otro? " + Verificador.esSobrePos(A, B));
+                break;
+            case 2:
+                System.out.println("¿Están lado a lado? " + Verificador.esJunto(A, B));
+                break;
+            case 3:
+                System.out.println("¿Están separados? " + Verificador.esDisjunto(A, B));
+                break;
+            case 4:
+                System.out.println("¿Uno está sobre otro? " + Verificador.esSobrePos(A, B));
+                System.out.println("¿Están lado a lado? " + Verificador.esJunto(A, B));
+                System.out.println("¿Están separados? " + Verificador.esDisjunto(A, B));
+                break;
+            case 5:
+                System.out.println("Saliendo del programa...");
+                break;
+            default:
+                System.out.println("Opción no válida. Intenta de nuevo.");
+        }
         scanner.close();
     }
 }
