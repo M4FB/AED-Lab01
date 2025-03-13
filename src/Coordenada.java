@@ -1,14 +1,23 @@
-import java.util.*;
+/*
+La clase coordenada cumple con todos los requisitos dados en clase:
+- Dos variables X e Y
+- Tres constructores
+- Getters y Setters
+- Metodo estático y de instancia para hallar la distancia
+-toString para convertir el objeto en cadena
+*/
 
+import java.util.*;
 public class Coordenada {
+    //Variables
     private Double x;
     private Double y;
 
+    //Constructores
     public Coordenada() {
         this.x = 0.0;
         this.y = 0.0;
     }
-
     public Coordenada(Double x, Double y) {
         this.x = x;
         this.y = y;
@@ -32,7 +41,12 @@ public class Coordenada {
         return y;
     }
 
-    static double Distancia(Coordenada c1, Coordenada c2) {
+    //Metodos
+    public double distancia(Coordenada c) {
+        return Math.sqrt(Math.pow(c.x - this.x, 2) + Math.pow(c.y - this.y, 2));
+    }
+
+    static double distancia(Coordenada c1, Coordenada c2) {
         return Math.sqrt(Math.pow(c2.x - c1.x, 2) + Math.pow(c2.y - c1.y, 2));
     }
 
